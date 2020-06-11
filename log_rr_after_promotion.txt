@@ -1,0 +1,30 @@
+[ec2-user@ip-9-1-11-22 ~]$ mysql -h dbreadreplica.cm1su1zmfdzp.us-west-1.rds.amazonaws.com -P 3306 -u admin -p
+Enter password:
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MySQL connection id is 9
+Server version: 8.0.17 Source distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MySQL [(none)]> USE udacity
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+MySQL [udacity]> INSERT INTO pet
+    -> VALUES ('Mocha','Brian','dog','f','1992-04-27',NULL);
+Query OK, 1 row affected (0.01 sec)
+
+MySQL [udacity]> SELECT * FROM pet;
++----------+-------+---------+------+------------+-------+
+| name     | owner | species | sex  | birth      | death |
++----------+-------+---------+------+------------+-------+
+| Puffball | Diane | hamster | f    | 1999-03-30 | NULL  |
+| Mochi    | Sukey | rabbit  | f    | 1992-12-17 | NULL  |
+| Mocha    | Brian | dog     | f    | 1992-04-27 | NULL  |
++----------+-------+---------+------+------------+-------+
+3 rows in set (0.01 sec)
+
+MySQL [udacity]>
